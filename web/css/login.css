@@ -1,0 +1,55 @@
+body{
+    background-image: url("../image/login_background.jpg");
+    background-size:cover;
+}
+#username,#password{
+    outline: 0;
+    background: #f2f2f2;
+    width: 300px;
+    height: 50px;
+    padding: 15px;
+    border-style: solid;
+    box-sizing: border-box;
+    font-size:15px;
+    float: left;
+    outline: none;
+}
+span{
+    font-size: 20px;
+    color: red;
+    font-weight: bold;
+    top: 5px;
+}
+#login{
+    background: #4CAF50;
+    width: 350px;
+    border: 0;
+    padding: 15px;
+    color: #FFFFFF;
+    font-size: 14px;
+    box-shadow: 0 9px #999;
+    border-radius: 10px;
+    outline: none;
+}
+#login:hover{
+    background-color: #43A047;
+}
+#login:active {
+    background-color: #3e8e41;
+    box-shadow: 0 5px #666;
+    transform: translateY(4px);
+}
+.form-horizontal{
+    float: left;
+    margin-top: 300px;
+    margin-left: 300px;
+}
+#message{
+    margin: 15px 0 0 10px;
+
+    font-size: 12px;
+}
+#message a{
+    color: #4CAF50;
+    font-weight: bolder;
+}

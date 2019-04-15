@@ -1,0 +1,259 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <link rel="stylesheet" href="http://cdn.staticfile.org/twitter-bootstrap/3.3.7/css/bootstrap.min.css">
+    <script src="http://cdn.staticfile.org/jquery/2.1.1/jquery.min.js"></script>
+    <script src="http://cdn.staticfile.org/twitter-bootstrap/3.3.7/js/bootstrap.min.js"></script>
+    <title>BookList</title>
+    <style type="text/css">
+        .top,.navbar{
+            height:50px;
+            margin-bottom: 0;
+        }
+        .bianlan{
+            width:10%;
+            float: left;
+            border-radius: 4px;
+            border: 1px solid #ddd;
+            box-shadow: 0 1px 4px rgba(0, 0, 0, 0.067);
+        }
+        .body{
+            width: 80%;
+            margin-left:10%;
+        }
+        .content{
+            width:75%;
+            height: auto;
+            margin-left:15%;
+            border-radius: 4px;
+            border: 1px solid #ddd;
+            box-shadow: 0 1px 4px rgba(0, 0, 0, 0.067);
+        }
+        li a{
+            text-align: center;
+        }
+
+        #bianlan_title{
+            background-color: #8e8e8e;
+            text-align: center;
+            font-weight: bolder;
+            font-size: 15px;
+            color:white;
+            padding:10px;
+        }
+        .commodity{
+            height:20%;
+        }
+        .commodity_left{
+            float: left;
+            margin-top:10px;
+            margin-bottom: 10px;
+            position: relative;
+        }
+        .commodity_intro{
+            padding-left:120px;
+        }
+        .image{
+            width:110px;
+            height: 110px;
+            border:0;
+        }
+        .name{
+            font-size: 15px;
+            margin-left: 120px;
+            margin-top:15px;
+        }
+        .part1{
+            margin-top:15px;
+            /*margin-left:20px;*/
+        }
+        .part2{
+            margin-top:10px;
+            width:90%;
+            max-height:40px;
+            overflow: hidden;
+        }
+        .buy{
+            text-align: right;
+            margin-right:20%;
+        }
+        .commodity_price{
+            padding-right: 20px;
+        }
+    </style>
+    <script type="text/javascript">
+        $(function(){
+            $(".dropdown-toggle").mousemove(function(){
+                $(this).attr("aria-expanded","true");
+                $(this).parent().attr("class","dropdown open")
+            })
+            $(".dropdown-menu").mousemove(function(){
+                $(this).attr("aria-expanded","true");
+                $(this).parent().attr("class","dropdown open")
+            })
+            $(".dropdown-toggle").mouseleave(function(){
+                $(this).attr("aria-expanded","false");
+                $(this).parent().attr("class","dropdown")
+            })
+            $(".dropdown-menu").mouseleave(function(){
+                $(this).attr("aria-expanded","false");
+                $(this).parent().attr("class","dropdown")
+            })
+            // 导航栏中书籍的点击事件
+            $(".nav_book").click(function(){
+                $(location).prop('href','booklist.html');
+            })
+            // 导航栏中音像制品的点击事件
+            $(".nav_music").click(function(){
+                $(location).prop('href','booklist.html');
+            })
+        })
+
+    </script>
+</head>
+<body>
+<!--                顶部导航栏                   -->
+    <div class="top">
+        <nav class="navbar navbar-default navbar-fixed-top" role="navigation">
+            <div class="container-fluid">
+                <div class="navbar-header">
+                    <a class="navbar-brand" href="main.html">清新书店</a>
+                </div>
+                <ul class="nav navbar-nav">
+                    <li class="dropdown">
+                        <a href="#" class="dropdown-toggle" data-toggle="dropdown">
+                            书籍
+                            <b class="caret"></b>
+                        </a>
+                        <ul class="dropdown-menu">
+                            <li><a href="#">jmeter</a></li>
+                            <li><a href="#">EJB</a></li>
+                            <li><a href="#">Jasper Report</a></li>
+                            <li class="divider"></li>
+                            <li><a href="#">分离的链接</a></li>
+                            <li class="divider"></li>
+                            <li><a href="#">另一个分离的链接</a></li>
+                        </ul>
+                    </li>
+                    <li class="dropdown">
+                        <a href="#" class="dropdown-toggle" data-toggle="dropdown">
+                            音像制品
+                            <b class="caret"></b>
+                        </a>
+                        <ul class="dropdown-menu">
+                            <li><a href="#">jmeter</a></li>
+                            <li><a href="#">EJB</a></li>
+                            <li><a href="#">Jasper Report</a></li>
+                            <li class="divider"></li>
+                            <li><a href="#">分离的链接</a></li>
+                            <li class="divider"></li>
+                            <li><a href="#">另一个分离的链接</a></li>
+                        </ul>
+                    </li>
+                </ul>
+
+                <ul class="nav navbar-nav navbar-right">
+                    <li><a href="register.html" target="_parent"><span class="glyphicon glyphicon-user"></span> 注册</a></li>
+                    <li><a href="login.html" target="_parent"><span class="glyphicon glyphicon-log-in"></span> 登录</a></li>
+                </ul>
+                <form class="navbar-form navbar-right" role="search">
+                    <div class="form-group">
+                        <input type="text" class="form-control" placeholder="Search">
+                    </div>
+                    <button type="submit" class="btn btn-default">搜索</button>
+                </form>
+            </div>
+        </nav>
+    </div>
+
+<!--                主体中的面包屑导航     尝试着做了个，可以不要          -->
+    <div>
+        <ul class="breadcrumb">
+            <li><a href="homepage.html">主页</a></li>
+            <li class="active">图书</li>
+        </ul>
+    </div>
+
+<!--                    主体内容                    -->
+    <div class="body">
+
+<!--                    主体中的边栏                   -->
+        <div class="bianlan">
+            <div id="bianlan_title">分类浏览</div>
+            <ul class="nav nav-pills nav-stacked" id="bianlan_content">
+                <li><a href="#">Home</a></li>
+                <li><a href="#">SVN</a></li>
+                <li><a href="#">iOS</a></li>
+                <li><a href="#">VB.Net</a></li>
+                <li><a href="#">Java</a></li>
+                <li><a href="#">PHP</a></li>
+            </ul>
+        </div>
+<!--                    商品列表内容                  -->
+        <div class="content">
+<!--                    每一个商品一个div                  -->
+            <div class="commodity">
+                <div class="commodity_left">
+                    <a href="Detail.html" target="_blank">
+                        <img class="image" src="image/jieyouzahuopu.jpg" title="图书名称">
+                    </a>
+                </div>
+                <div class="commodity_right">
+                    <div class="name">
+                        <a href="Detail.html" target="_blank" class="commodity_name">
+                            商品名称
+                        </a>
+                    </div>
+                    <div class="commodity_intro">
+                        <div class="part1">作者：会计实操辅导教材研究院<br/>
+                            出版社：广东人民出版社</div>
+                        <div class="part2">
+                            图书简介图书简介图书简介图书简介图书简介图图书简介图书简介图书简介
+                            书简介图书简介图书简介图书简介图书简介图书简介图书简介图书简介
+                            图书简介图书简介图书简介图书简介图书简介图书简介图书简介图书简介图书简介
+                            图书简介图书简介图书简介图书简介图书简介图书简介图书简介图书简介
+                        </div>
+                    </div>
+                    <div class="buy">
+                        <span class="commodity_price">41.20元</span>
+                        <button type="button" class="btn btn-warning">购&nbsp&nbsp&nbsp&nbsp&nbsp&nbsp买</button>
+                    </div>
+                    <hr width="90%" style="height:1px;" color="rgba(175,175,175,0.36)"/>
+                </div>
+            </div>
+            <!--                    每一个商品一个div                  -->
+            <div class="commodity">
+                <div class="commodity_left">
+                    <a href="Detail.html" target="_blank">
+                        <img class="image" src="image/jieyouzahuopu.jpg" title="图书名称">
+                    </a>
+                </div>
+                <div class="commodity_right">
+                    <div class="name">
+                        <a href="Detail.html" target="_blank" class="book">
+                            图书名称
+                        </a>
+                    </div>
+                    <div class="commodity_intro">
+                        <div class="part1">作者：会计实操辅导教材研究院<br/>
+                            出版社：广东人民出版社</div>
+                        <div class="part2">
+                            图书简介图书简介图书简介图书简介图书简介图图书简介图书简介图书简介
+                            书简介图书简介图书简介图书简介图书简介图书简介图书简介图书简介
+                            图书简介图书简介图书简介图书简介图书简介图书简介图书简介图书简介图书简介
+                            图书简介图书简介图书简介图书简介图书简介图书简介图书简介图书简介
+                        </div>
+                    </div>
+                    <div class="buy">
+                        <span class="commodity_price">41.20元</span>
+                        <button type="button" class="btn btn-warning">购&nbsp&nbsp&nbsp&nbsp&nbsp&nbsp买</button>
+                    </div>
+                    <hr width="90%" style="height:1px;" color="rgba(175,175,175,0.36)"/>
+                </div>
+            </div>
+
+        </div>
+    </div>
+</body>
+</html>

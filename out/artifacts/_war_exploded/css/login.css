@@ -1,0 +1,84 @@
+.from{
+    position: relative;
+    z-index: 1;
+    background: #FFFFFF;
+    max-width: 360px;
+    margin: 100px 400px;
+    padding: 45px;
+    text-align: center;
+}
+.form input{
+    outline: 0;
+    background: #f2f2f2;
+    width: 300px;
+    border: 0;
+    margin: 0 0 15px;
+    padding: 15px;
+    box-sizing: border-box;
+    font-size: 14px;
+}
+.login-form{
+    width: 500px;
+    height: 500px;
+    margin-top: 300px;
+}
+#login,#register{
+    /*text-transform: uppercase;*/
+    background: #4CAF50;
+    width: 300px;
+    border: 0;
+    padding: 15px;
+    color: #FFFFFF;
+    font-size: 14px;
+}
+#logintop,#registertop{
+    /*text-transform: uppercase;*/
+    background-color: white;
+    /*border-color: #4CAF50;*/
+    margin-bottom: 12px;
+    border-bottom: 0;
+    border-left: black 1px;
+    border-right: black 1px;
+    width: 150px;
+    padding: 15px;
+    font-size: 10px;
+}
+#logintop:hover,#registertop:hover,#logintop:active,#registertop:active{
+    /*text-transform: uppercase;*/
+    background-color: white;
+    border-top-left-radius: 1em;
+    border-top-right-radius: 1em;
+    box-shadow:5px 5px 5px 5px rgba(142,142,142,0.21) inset;
+    border-bottom: 0;
+    margin-bottom: 12px;
+    width: 150px;
+    padding: 15px;
+    font-size: 10px;
+}
+#login:hover,#login:active,#register:hover,#register:active{
+    background: #43A047;
+}
+.message{
+    margin: 15px 0 0;
+    color: #b3b3b3;
+    font-size: 12px;
+}
+.form .message a {
+    color: #4CAF50;
+
+}
+.form span{
+    color: #EF3B3A;
+    font-weight: bold;
+    /*display: none;*/
+    /*float: right;*/
+    /*text-align: left;*/
+}
+.logindiv{
+    display: block;
+}
+.registerdiv{
+    display: none;
+}
+
+

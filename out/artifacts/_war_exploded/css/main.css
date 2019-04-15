@@ -1,0 +1,8 @@
+#myCarousel{
+    width: 100%;
+    height: 500px;
+}
+.carousel-inner img{
+    position: relative;
+    left:40%;
+}

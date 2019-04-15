@@ -1,0 +1,289 @@
+<html>
+<head>
+    <meta http-equiv="Content-Type" content="text/html; charset=utf-8" />
+    <link rel="stylesheet" href="https://cdn.staticfile.org/twitter-bootstrap/3.3.7/css/bootstrap.min.css">
+    <script src="https://cdn.staticfile.org/jquery/2.1.1/jquery.min.js"></script>
+    <script src="https://cdn.staticfile.org/twitter-bootstrap/3.3.7/js/bootstrap.min.js"></script>
+    <title>Manage</title>
+    <style type="text/css">
+        body{
+            background-image: url("image/manage_body_background.JPG");
+        }
+        .header{
+            height:20%;
+        }
+        .index{
+            width: 20%;
+            height: 70%;
+            margin-left:3%;
+            float:left;
+
+            /*background-color: white;*/
+            font-weight: bold;
+            /*background-image: url("image/manage_index_background.jpg");*/
+        }
+        .index a{
+            color:black;
+            font-size: 20px;
+        }
+        /*.commodity,.order,.type{*/
+        /*    width:80%;*/
+        /*}*/
+        .body{
+            width:70%;
+            height:70%;
+            margin-left: 25%;
+            background-color: rgba(255,255,255,0.7);
+        }
+        .order,.type{
+            display: none;
+        }
+        .commodity{
+            display: block;
+        }
+        .table{
+             width:100%;
+             table-layout: fixed;
+         }
+        th,td{
+            text-align: center;
+        }
+        thead,tbody{
+            /*width:100%;*/
+        }
+        tr{
+            /*width:100%;*/
+        }
+        .table>thead>tr>th {
+            vertical-align: baseline;
+            border-bottom: 2px solid #ddd;
+        }
+        .table>tbody>tr>td {
+            vertical-align: baseline;
+
+        }
+        .nav{
+            margin-top:2%;
+        }
+        .modal-content{
+            margin-top:50%;
+        }
+        .label_input{
+            margin-bottom: 15px;
+        }
+        textarea {
+            resize: none;
+        }
+
+    </style>
+    <script type="text/javascript">
+        $(function(){
+            // 边栏 商品管理 点击事件
+            $("#index_commodity").click(function(){
+                $(this).parent("li").addClass("active");
+                $("#index_order").parent("li").removeClass();
+                $("#index_type").parent("li").removeClass();
+                $(".order,.type").css("display","none");
+                $(".commodity").css("display","block");
+            })
+            // 边栏 订单管理 点击事件
+            $("#index_order").click(function(){
+                $(this).parent("li").addClass("active");
+                $("#index_commodity").parent("li").removeClass();
+                $("#index_type").parent("li").removeClass();
+                $(".commodity,.type").css("display","none");
+                $(".order").css("display","block");
+            })
+            // 边栏 类目管理 点击事件
+            $("#index_type").click(function(){
+                $(this).parent("li").addClass("active");
+                $("#index_commodity").parent("li").removeClass();
+                $("#index_order").parent("li").removeClass();
+                $(".commodity,.order").css("display","none");
+                $(".type").css("display","block");
+            })
+            $("#addmodelbutton").click(function(){
+                if(check_null($("#commodityname"))
+                    ||check_null($("#commodityprice"))
+                    ||check_null($("#commodityauthor"))
+                    ||check_null($("#commoditypublisher"))
+                    ||check_null($("#commodityintro"))){
+                    alert("文本内容不能为空");
+                    return false;
+                }
+            })
+        })
+
+        function check_null(element){
+            var value = element.val();
+            if(value==""||value==null||value.trim()==""){
+                return true;
+            }
+        }
+    </script>
+</head>
+<body>
+<!--显示商品的样式是一还是二-->
+<!--固定分页的显示数目-->
+<!--登录时如果是管理员账户，跳转到管理员界面，否则到主页-->
+<!--                    标题位置                    -->
+    <div class="header">
+
+    </div>
+<!--                    导航边栏                        -->
+    <div class="container index well">
+        <ul class="nav nav-pills nav-stacked" role="tablist">
+            <li><a href="#" id="index_commodity">商品管理</a></li>
+            <li><a href="#" id="index_order">订单管理</a></li>
+            <li><a href="#" id="index_type">类目管理</a></li>
+        </ul>
+    </div>
+
+<!--                    主内容                     -->
+<!--                    商品管理                    -->
+    <div class="body">
+        <table class="table table-hover commodity">
+            <thead>
+            <tr>
+                <th>商品名</th>
+                <th>价格</th>
+                <th>作者</th>
+                <th>出版社</th>
+                <th>简介</th>
+                <th><a><span class="glyphicon glyphicon-plus add" data-toggle="modal" data-target="#addmodel"></span></a></th>
+            </tr>
+            </thead>
+            <tbody>
+            <tr>
+                <td>Tanmay</td>
+                <td>Bangalore</td>
+                <td>560001</td>
+                <td>Tanmay</td>
+                <td>Bangalore</td>
+                <td>
+                    <a><span class="glyphicon glyphicon-remove delete" data-toggle="modal" data-target="#deletemodel"></span></a>
+                    <a><span class="glyphicon glyphicon-wrench modify" data-toggle="modal" data-target="#modifymodel"></span></a>
+                </td>
+            </tr>
+            </tbody>
+        </table>
+
+        <!--                    订单管理                    -->
+        <table class="table table-hover order" cellpadding="0" cellspacing="0">
+            <thead>
+            <tr>
+                <th>订单名</th>
+                <th>价格</th>
+                <th>作者</th>
+                <th>出版社</th>
+                <th>简介</th>
+                <th>状态</th>
+                <th><a><span class="glyphicon glyphicon-plus add" data-toggle="modal" data-target="#addmodel"></span></a></th>
+            </tr>
+            </thead>
+            <tbody>
+            <tr>
+                <td>Tanmay</td>
+                <td>Bangalore</td>
+                <td>560001</td>
+                <td>Tanmay</td>
+                <td>Bangalore</td>
+                <td>560001</td>
+                <td>
+                    <a><span class="glyphicon glyphicon-remove delete" data-toggle="modal" data-target="#deletemodel"></span></a>
+                    <a><span class="glyphicon glyphicon-wrench modify" data-toggle="modal" data-target="#modifymodel"></span></a>
+                </td>
+            </tr>
+            </tbody>
+        </table>
+        <!--                    类目管理                    -->
+        <table class="table table-hover type">
+            <thead>
+            <tr>
+                <th>类目名</th>
+                <th>价格</th>
+                <th>作者</th>
+                <th>出版社</th>
+                <th>简介</th>
+                <th>状态</th>
+                <th><a><span class="glyphicon glyphicon-plus add" data-toggle="modal" data-target="#addmodel"></span></a></th>
+            </tr>
+            </thead>
+            <tbody>
+            <tr>
+                <td>Tanmay</td>
+                <td>Bangalore</td>
+                <td>560001</td>
+                <td>Tanmay</td>
+                <td>Bangalore</td>
+                <td>560001</td>
+                <td>
+                    <a><span class="glyphicon glyphicon-remove delete" data-toggle="modal" data-target="#deletemodel"></span></a>
+                    <a><span class="glyphicon glyphicon-wrench modify" data-toggle="modal" data-target="#modifymodel"></span></a>
+                </td>
+            </tr>
+            </tbody>
+        </table>
+    </div>
+
+<!--                add弹出框               -->
+<div class="modal fade" id="addmodel" tabindex="-1" role="dialog" aria-labelledby="addmodelLabel" aria-hidden="true">
+    <div class="modal-dialog">
+        <div class="modal-content">
+            <div class="modal-body">
+                <form role="form">
+                    <input type="text" class="form-control label_input" id="commodityname" placeholder="商品名称"/>
+                    <input type="text" class="form-control label_input" id="commodityprice" placeholder="商品价格"/>
+                    <input type="text" class="form-control label_input" id="commodityauthor" placeholder="作者"/>
+                    <input type="text" class="form-control label_input" id="commoditypublisher" placeholder="出版商"/>
+                    <textarea type="text" rows="3" class="form-control label_input" id="commodityintro" placeholder="简介"></textarea>
+                </form>
+            </div>
+            <div class="modal-footer">
+                <button type="button" class="btn btn-default" data-dismiss="modal">
+                    关闭
+                </button>
+                <button type="button" id="addmodelbutton" class="btn btn-primary addbutton">
+                    确定添加
+                </button>
+            </div>
+        </div>
+    </div>
+</div>
+<!--                delete弹出框               -->
+<div class="modal fade" id="deletemodel" tabindex="-1" role="dialog" aria-labelledby="deletemodelLabel" aria-hidden="true">
+    <div class="modal-dialog">
+        <div class="modal-content">
+            <div class="modal-body">
+                确定要删除这件商品吗？
+            </div>
+            <div class="modal-footer">
+                <button type="button" class="btn btn-default" data-dismiss="modal">
+                    关闭
+                </button>
+                <button type="button" id="deletemodelbutton" class="btn btn-primary deletebutton">
+                    确定删除
+                </button>
+            </div>
+        </div>
+    </div>
+</div>
+<!--                modify弹出框               -->
+<div class="modal fade" id="modifymodel" tabindex="-1" role="dialog" aria-labelledby="modifymodelLabel" aria-hidden="true">
+    <div class="modal-dialog">
+        <div class="modal-content">
+            <div class="modal-body">
+                在这里添加一些文本
+            </div>
+            <div class="modal-footer">
+                <button type="button" class="btn btn-default" data-dismiss="modal">关闭
+                </button>
+                <button type="button" id="modifymodelbutton" class="btn btn-primary modifybutton">
+                    确定修改
+                </button>
+            </div>
+        </div>
+    </div>
+</div>
+</body>
+</html>

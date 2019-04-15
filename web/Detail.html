@@ -1,0 +1,146 @@
+<html>
+<head>
+    <title>Detail</title>
+    <meta http-equiv="Content-Type" content="text/html; charset=utf-8" />
+    <link rel="stylesheet" href="https://cdn.staticfile.org/twitter-bootstrap/3.3.7/css/bootstrap.min.css">
+    <script src="https://cdn.staticfile.org/jquery/2.1.1/jquery.min.js"></script>
+    <script src="https://cdn.staticfile.org/twitter-bootstrap/3.3.7/js/bootstrap.min.js"></script>
+    <style type="text/css">
+        #buy{
+            width:150px;
+            height: 50px;
+            font-weight: bold;
+            background-color: #ffb639;
+            /*border-radius: 10px;*/
+            /*border:0;*/
+            /*float: right;*/
+            outline: none;
+
+            margin-top:276px;
+            /*margin-left:100px;*/
+        }
+        #buy:hover,#buy:active{
+            background-color: #ffb91f;
+
+        }
+        .media-body{
+            max-height: 500px;
+            width:30%;
+        }
+        .media-body p{
+            font-size: 17px;
+        }
+        .container{
+            width:85%;
+            text-align: center;
+        }
+        img{
+
+            margin-left: 300px;
+        }
+        .row{
+            margin-left: 0;
+            margin-right:0;
+            width:80%;
+            margin-left:10%;
+        }
+        #detail_bottom_title a{
+            text-align: right;
+            padding-right: 0;
+            float: right;
+            width:100%;
+        }
+    </style>
+    <script>
+        $(function(){
+            $.ajax({
+                url:"",
+                data:{
+
+                },
+                dataType:"json",
+                success:function(result){
+                    for(var i=0;i<result.length-1;i++){
+                        var node = '<tr>\n'
+                            +'<td>'+'';
+                    }
+                },
+                error:function(){
+
+                }
+
+            })
+        })
+    </script>
+</head>
+<body>
+    <div class="container">
+        <hr width="95%" style="height:2px;" color="rgba(175,175,175,0.36)"/>
+        <div class="media">
+            <div class="media-left media-middle">
+                <img src="image/hulanhezhuan.jpg" class="media-object">
+            </div>
+            <div class="media-body">
+                <h2 class="media-heading">商品姓名</h2>
+                <p>售价：商品价格</p>
+                <p>作者：作者姓名</p>
+                <p>出版社：出版社姓名</p>
+                <p>简介：简介内容</p>
+                <button class="btn btn-default" id="buy">购&nbsp&nbsp&nbsp&nbsp&nbsp买</button>
+            </div>
+        </div>
+        <hr width="95%" style="height:2px;" color="rgba(175,175,175,0.36)"/>
+    </div>
+
+    <div class="row">
+        <div id="detail_bottom_title">
+            <h2>图书</h2>
+            <a href="#">更多>></a>
+        </div>
+
+        <div class="col-sm-6 col-md-3">
+            <div class="thumbnail">
+                <a href="Detail.html" target="_self"><img src="image/hulanhezhuan.jpg"
+                                                          alt="通用的占位符缩略图"></a>
+                <div class="caption">
+                    <a href="Detail.html" target="_self"><h3>商品名称</h3></a>
+                    <p>价格</p>
+                </div>
+            </div>
+        </div>
+
+        <div class="col-sm-6 col-md-3">
+            <div class="thumbnail">
+                <a href="Detail.html" target="_self"><img src="image/hulanhezhuan.jpg"
+                                                          alt="通用的占位符缩略图"></a>
+                <div class="caption">
+                    <a href="Detail.html" target="_self"><h3>商品名称</h3></a>
+                    <p>价格</p>
+                </div>
+            </div>
+        </div>
+
+        <div class="col-sm-6 col-md-3">
+            <div class="thumbnail">
+                <a href="Detail.html" target="_self"><img src="image/hulanhezhuan.jpg"
+                                                          alt="通用的占位符缩略图"></a>
+                <div class="caption">
+                    <a href="Detail.html" target="_self"><h3>商品名称</h3></a>
+                    <p>价格</p>
+                </div>
+            </div>
+        </div>
+
+        <div class="col-sm-6 col-md-3">
+            <div class="thumbnail">
+                <a href="Detail.html" target="_self"><img src="image/hulanhezhuan.jpg"
+                                                          alt="通用的占位符缩略图"></a>
+                <div class="caption">
+                    <a href="Detail.html" target="_self"><h3>商品名称</h3></a>
+                    <p>价格</p>
+                </div>
+            </div>
+        </div>
+    </div>
+</body>
+</html>
